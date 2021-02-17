@@ -1,0 +1,14 @@
+import React,{Component} from "react";
+
+class CounterApp extends Component{
+
+  render(){
+    return(
+      <div>
+       ounterApp work
+      </div>
+    )
+  }
+}
+
+export default CounterApp;
