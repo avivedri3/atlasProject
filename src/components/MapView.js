@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import data from '../assets/data';
 import Markers from './VenueMarkers';
 
-class MapView extends Component {
+function MapView (props) {
   
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentLocation: { lat:props.loc1 , lng: props.loc2 },
-      zoom: 8,
-    }
-  }
+  let [currentLocation, setCurrentLocation] = useState({ lat:props.loc1 , lng: props.loc2 });
+  let [zoom, setZoom] = useState(8);
 
-  render() {
-    const { currentLocation, zoom } = this.state;
-
+  useEffect(()=>{
+      setCurrentLocation({ lat:props.loc1 , lng: props.loc2 });
+  }, [props.loc1, props.loc2])
+  
     return (
       <Map center={currentLocation} zoom={zoom}>
         <TileLayer
@@ -28,6 +24,6 @@ class MapView extends Component {
       </Map>
     );
   }
-}
+
 
 export default MapView;
