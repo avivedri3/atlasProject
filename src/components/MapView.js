@@ -7,12 +7,12 @@ import Markers from './VenueMarkers';
 function MapView (props) {
   
   let [currentLocation, setCurrentLocation] = useState({ lat:props.loc1 , lng: props.loc2 });
-  let [zoom, setZoom] = useState(8);
+  let [zoom, setZoom] = useState(7);
 
   useEffect(()=>{
       setCurrentLocation({ lat:props.loc1 , lng: props.loc2 });
   }, [props.loc1, props.loc2])
-  
+
     return (
       <Map center={currentLocation} zoom={zoom}>
         <TileLayer
