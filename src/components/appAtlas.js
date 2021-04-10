@@ -60,7 +60,7 @@ let name = useRef("");
 
       <label>Country: </label>
       <input ref={name} type="text" placeholder="country..." onKeyUp={searchEnter}/>
-      <button className="btn btn-info" onClick={doApi}>Search</button>
+      <button className="btn btn-info ms-2" onClick={doApi}>Search</button>
       <ListAtlas country={country} setCountry={setCountry} name={name.current.value} doApiCode={doApiCode}/>
     </React.Fragment>
   )
