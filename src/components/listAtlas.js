@@ -4,7 +4,7 @@ import MapView from './MapView';
 function ListAtlas(props){
   
   return(
-    <main className="row">
+    <main className="row ms-2">
       {props.country &&<div className="col-lg-6 p-2">
             <h1>{props.country.name}</h1>
             <h3>Population: {props.country.population}</h3>
@@ -14,7 +14,7 @@ function ListAtlas(props){
             <h3>Capital: {props.country.capital}</h3>
             <h3>States with borders: {(props.country.borders).map(item=>{
               return(
-                <button onClick={()=>{
+                <button className="d-flex btn-info mt-2" onClick={()=>{
                   props.doApiCode(String(item));
                 }}>{item}</button>
               )
