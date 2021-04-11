@@ -14,7 +14,7 @@ function ListAtlas(props){
             <h3>Capital: {props.country.capital}</h3>
             <h3>States with borders: {(props.country.borders).map(item=>{
               return(
-                <button className="d-flex btn-info mt-2" onClick={()=>{
+                <button className="btn btn-info mt-2" onClick={()=>{
                   props.doApiCode(String(item));
                 }}>{item}</button>
               )

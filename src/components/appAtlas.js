@@ -42,25 +42,29 @@ let name = useRef("");
 
   return(
     <React.Fragment>
-      <button onClick={()=>{
+      <header>
+        <h2 className="display-1">Atlas</h2>
+    
+      <button className=" ms-2 btn btn-info" onClick={()=>{
         doApiName("Usa")
       }}>Usa</button>
-      <button onClick={()=>{
+      <button className="btn btn-info" onClick={()=>{
         doApiName("Israel")
       }}>Israel</button>
-      <button onClick={()=>{
+      <button className="btn btn-info" onClick={()=>{
         doApiName("United kingdom")
       }}>Uk</button>
-      <button onClick={()=>{
+      <button className="btn btn-info" onClick={()=>{
         doApiName("France")
       }}>France</button>
-      <button onClick={()=>{
+      <button className="btn btn-info" onClick={()=>{
         doApiName("Thailand")
       }}>Thailand</button>
+      </header>
 
-      <label>Country: </label>
-      <input ref={name} type="text" placeholder="country..." onKeyUp={searchEnter}/>
-      <button className="btn btn-info ms-2" onClick={doApi}>Search</button>
+      <label className="ms-2">Country: </label>
+      <input className="ms-2 p-1 mt-3" ref={name} type="text" placeholder="country..." onKeyUp={searchEnter}/>
+      <button className=" btn btn-warning ms-2 p-2" onClick={doApi}>Search</button>
       <ListAtlas country={country} setCountry={setCountry} name={name.current.value} doApiCode={doApiCode}/>
     </React.Fragment>
   )
