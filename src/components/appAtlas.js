@@ -43,7 +43,7 @@ let name = useRef("");
   return(
     <React.Fragment>
       <header>
-        <h2>Atlas</h2>
+        <h2>WORLD MAP</h2>
     <nav>
       <button className=" ms-2 btn btn-light" onClick={()=>{
         doApiName("Usa")
