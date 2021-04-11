@@ -43,28 +43,34 @@ let name = useRef("");
   return(
     <React.Fragment>
       <header>
-        <h2 className="display-1">Atlas</h2>
-    
-      <button className=" ms-2 btn btn-info" onClick={()=>{
+        <h2>Atlas</h2>
+    <nav>
+      <button className=" ms-2 btn btn-light" onClick={()=>{
         doApiName("Usa")
       }}>Usa</button>
-      <button className="btn btn-info" onClick={()=>{
+      <button className="btn btn-light" onClick={()=>{
         doApiName("Israel")
       }}>Israel</button>
-      <button className="btn btn-info" onClick={()=>{
+      <button className="btn btn-light" onClick={()=>{
         doApiName("United kingdom")
       }}>Uk</button>
-      <button className="btn btn-info" onClick={()=>{
+      <button className="btn btn-light" onClick={()=>{
         doApiName("France")
       }}>France</button>
-      <button className="btn btn-info" onClick={()=>{
+      <button className="btn btn-light" onClick={()=>{
         doApiName("Thailand")
       }}>Thailand</button>
+      </nav>
       </header>
-
+      <div className="barS d-flex align-items-center">
       <label className="ms-2">Country: </label>
-      <input className="ms-2 p-1 mt-3" ref={name} type="text" placeholder="country..." onKeyUp={searchEnter}/>
-      <button className=" btn btn-warning ms-2 p-2" onClick={doApi}>Search</button>
+      <div className="search">
+      <input className="ms-2 p-1" ref={name} type="text" placeholder="Search..." onKeyUp={searchEnter}/>
+      <button onClick={doApi}><i className="fa fa-globe" aria-hidden="true"></i></button>
+      </div>
+      </div>
+      
+      {/* className=" btn btn-warning ms-2 p-2" onClick={doApi}>Search */}
       <ListAtlas country={country} setCountry={setCountry} name={name.current.value} doApiCode={doApiCode}/>
     </React.Fragment>
   )

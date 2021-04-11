@@ -7,7 +7,7 @@ function ListAtlas(props){
     <main className="row ms-2">
       {props.country &&<div className="col-lg-6 p-2">
             <h1>{props.country.name}</h1>
-            <h3>Population: {props.country.population}</h3>
+            <h3>Population: {props.country.population.toLocaleString()}</h3>
             <h3>Region: {props.country.region}</h3>
             <h3>Languages: {props.country.languages[0].name}</h3>
             <h3>Coin: {props.country.currencies[0].code}, {props.country.currencies[0].symbol}, {props.country.currencies[0].name}</h3>
